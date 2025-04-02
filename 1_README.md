@@ -5,4 +5,4 @@ This project used a simulated dataset to analyze how effective Internet of Thing
 
 The dataset I used can be found here https://www.kaggle.com/datasets/parvmodi/automotive-vehicles-engine-health-dataset.  Variables were renamed to make it easier to follow along.
 
-Data cleaning and analysis was done in R and SAS.
+Data cleaning and analysis were done in R and SAS.
