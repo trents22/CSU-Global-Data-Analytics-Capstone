@@ -48,6 +48,7 @@ proc logistic data=MIS581.ENGINE_TRAIN outmodel=ENGINE_MODEL plots(maxpoints=non
 	model engine_condition(event='0') = rpm fuel_pres coolant_pres coolant_temp 
 		oil_pres oil_temp / link=logit selection=backward slstay=0.05 
 		hierarchy=single technique=fisher;
+run;
 
 *****MODEL ANALYSIS WITH TRAINING DATA*****
 *Score the training dataset using the saved model;
@@ -90,7 +91,6 @@ proc tabulate data=PRED_TRAIN;
     title "Confusion Matrix for Training Data";
 run;
 
-*;
 data CONFUSION_TRAIN;
     set PRED_TRAIN;
     *Event of interest = '0' (positive). 0 shows a maintenance event;
@@ -164,7 +164,6 @@ proc tabulate data=PRED_VALIDATION;
     title "Confusion Matrix for Validation Data";
 run;
 
-*;
 data CONFUSION_VALIDATION;
     set PRED_VALIDATION;
     *Event of interest = '0' (positive). 0 shows a maintenance event;
