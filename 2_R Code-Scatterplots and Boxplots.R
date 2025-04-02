@@ -6,6 +6,7 @@ engine <- read.csv("C:/Users/trent/OneDrive/Desktop/CSU_Global/MIS581/Z_Data/eng
 engine <- engine[-c(2424, 15124), ]
 engine$engine_condition <- as.factor(engine$engine_condition)
 
+###SCATTERPLOTS
 #Scatterplot: RPM vs Fuel Pressure
 ggplot(engine, aes(x = rpm, y = fuel_pres, color = engine_condition)) +
   geom_point(size = 3, alpha = 0.7) +
@@ -42,6 +43,7 @@ ggplot(engine, aes(x = oil_pres, y = oil_temp, color = engine_condition)) +
        x = "Oil Pressure", y = "Oil Temperature") +
   theme_minimal()
 
+###BOXPLOTS
 # Create the box plot for RPM
 ggplot(engine, aes(x = engine_condition, y = rpm, fill = engine_condition)) +
   geom_boxplot() +
